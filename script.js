@@ -6,3 +6,16 @@ var todoCountSpan = document.querySelector("#todo-count");
 var todos = ["Learn HTML", "Learn CSS", "Learn JavaScript"];
 
 
+function renderTodos() {
+
+    for (var i = 0; i<  todos.length; i++){
+        // Create il element
+        var li = document.createElement("li");
+        // add todo text to li
+        li.innerText = todos[i];
+        // Append li to ul
+        todoList.appendChild(li);}
+
+}
+
+renderTodos();
