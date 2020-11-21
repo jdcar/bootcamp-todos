@@ -7,7 +7,10 @@ var todos = ["Learn HTML", "Learn CSS", "Learn JavaScript"];
 
 
 function renderTodos() {
+    // clear existing todos
+    todoList.innerHTML = ""
 
+// rerender todos
     for (var i = 0; i<  todos.length; i++){
         // Create il element
         var li = document.createElement("li");
@@ -17,5 +20,19 @@ function renderTodos() {
         todoList.appendChild(li);}
 
 }
+
+function addTodo (event) {
+    event.preventDefault()
+    var newTodo = todoInput.value
+    console.log(newTodo)
+    if (newTodo === ""){
+      return      
+    }
+    todos.push(newTodo)
+    renderTodos()
+    // 
+}
+todoForm.addEventListener("submit", addTodo)
+
 
 renderTodos();
